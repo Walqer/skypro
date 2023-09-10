@@ -1,0 +1,37 @@
+@import "../../../../styles/helpers/mixins";
+
+.counter {
+  display: flex;
+  height: rem(32px);
+  align-items: center;
+  margin-top: rem(9px);
+  margin-right: rem(16px);
+  @include size {
+    margin-right: 0;
+  }
+  margin-left: auto;
+  &__count {
+    @include montserrat(14px, 600, 29.4px, 14px, 29.4px, $black);
+    width: rem(47px);
+    text-align: center;
+    height: rem(24px);
+    outline: none;
+    border: none;
+  }
+  .counter__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .counter__button {
+    width: rem(16px);
+    height: rem(16px);
+    background-image: url("../../../../assets/icons/counter-arrow.svg");
+    background-size: cover;
+    border: none;
+    background-position: center;
+    cursor: pointer;
+  }
+  .counter__button:last-child {
+    transform: rotate(180deg);
+  }
+}

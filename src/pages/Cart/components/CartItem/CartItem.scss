@@ -1,0 +1,60 @@
+@import "../../../../styles/helpers/mixins";
+.cart-item {
+  display: flex;
+  border-top: 1px solid #e5e5e5;
+  &__img {
+    width: rem(173px);
+    height: rem(173px);
+    margin-right: rem(31px);
+    object-fit: cover;
+    @include size {
+      display: none;
+    }
+  }
+  &__title {
+    @include montserrat(24px, 500, 29px, 18px, 22px, $black);
+    margin-bottom: rem(14px);
+    @include size {
+      margin-bottom: rem(8px);
+    }
+  }
+  &__description {
+    @include montserrat(14px, 400, 17px, 12px, 15px, $light-gray);
+    margin-bottom: rem(16px);
+    max-width: rem(276px);
+    @include size {
+      margin-bottom: rem(15px);
+      max-width: rem(253px);
+    }
+  }
+  &__price {
+    display: inline-block;
+    @include montserrat(16px, 500, 20px, 16px, 20px, $black);
+    margin-bottom: rem(15px);
+  }
+  &__buttons {
+    @include montserrat(14px, 400, 29.4px, 14px, 29.4px, $black);
+  }
+  &__button {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    margin-right: 30px;
+    background: none;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__counter {
+    width: rem(47px);
+    height: rem(24px);
+    border: none;
+    @include montserrat(14px, 400, 29.4px, 14px, 29.4px, $black);
+  }
+  &__counter:focus-visible {
+    outline: 1px solid black;
+  }
+}

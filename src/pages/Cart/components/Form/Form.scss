@@ -1,0 +1,55 @@
+@import "../../../../styles/helpers/mixins";
+
+.form {
+  max-width: rem(379px);
+  padding: rem(42px) 0 rem(148px) rem(27px);
+  @include size {
+    max-width: unset;
+    padding: rem(42px) rem(16px) rem(148px) rem(16px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    text-align: center;
+    @include montserrat(24px, 600, 36px, 24px, 36px, $black);
+    margin-bottom: rem(35px);
+  }
+  &__input {
+    display: flex;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #cacdd8;
+    width: 100%;
+    @include size {
+      width: rem(288px);
+    }
+    @include montserrat(14px, 400, 17px, 14px, 17px, $black);
+    &::placeholder {
+      color: inherit;
+      font: inherit;
+    }
+  }
+  &__input:not(:first-of-type) {
+    margin-top: rem(41px);
+  }
+  &__cost {
+    margin-top: rem(64px);
+    display: flex;
+    justify-content: center;
+    @include montserrat(24px, 400, 29px, 24px, 29px, $black);
+    b {
+      font-weight: 500;
+    }
+    margin-bottom: rem(28px);
+  }
+  button {
+    border-color: #040404;
+    border-radius: rem(20px);
+    width: rem(290px);
+    text-align: center;
+  }
+  &__error {
+    @include montserrat(14px, 400, 17px, 14px, 17px, red);
+  }
+}

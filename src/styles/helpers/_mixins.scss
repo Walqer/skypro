@@ -1,0 +1,59 @@
+@import "sass-rem";
+@import "./colors";
+@import "./vars";
+@import "./breakpoints";
+
+@mixin size {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin sizeTablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: rem(1200px);
+  width: 100%;
+  margin: 0 auto;
+  @include size {
+    padding: 0 rem(16px);
+  }
+}
+
+@mixin montserrat(
+  $fontSize,
+  $fontWeight,
+  $lineHeight,
+  $mobSize,
+  $mobHeight,
+  $color
+) {
+  font-family: $Montserrat;
+  font-size: rem($fontSize);
+  font-weight: $fontWeight;
+  line-height: rem($lineHeight);
+  color: $color;
+
+  @include size {
+    font-size: rem($mobSize);
+    line-height: rem($mobHeight);
+  }
+}
+
+@mixin visuallyHidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

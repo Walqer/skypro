@@ -1,0 +1,73 @@
+@import "../../styles/helpers/mixins";
+
+.cart-page {
+  @include size {
+    margin-top: rem(18px);
+  }
+  @include sizeTablet {
+    flex-direction: column;
+  }
+  &.empty {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    @include montserrat(26px, 600, 120%, 13px, 25px, $black);
+  }
+  display: flex;
+  justify-content: space-between;
+  @include container;
+  margin-top: rem(32px);
+  &__content {
+    width: rem(786px);
+    @include sizeTablet {
+      width: 100%;
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: rem(27px);
+    margin-bottom: rem(14px);
+    @include montserrat(16px, 400, 20px, 16px, 20px, $black);
+    @include size {
+      display: none;
+    }
+  }
+  .cart-item {
+    padding-top: rem(25px);
+    @include size {
+      padding-top: rem(18px);
+    }
+  }
+  .cart-item:not(:last-child) {
+    margin-bottom: rem(32px);
+    @include size {
+      margin-bottom: rem(24px);
+    }
+  }
+  .cart-items {
+    margin: 0;
+    margin-bottom: rem(50px);
+    @include size {
+      margin-bottom: rem(32px);
+    }
+  }
+  .button:first-of-type {
+    margin-right: rem(7px);
+  }
+  .button {
+    @include size {
+      padding: rem(8px);
+      font-size: rem(12px);
+    }
+  }
+  .btn-wrap {
+    display: flex;
+    @include size {
+      justify-content: space-between;
+    }
+  }
+  &__form {
+    width: rem(379px);
+  }
+}

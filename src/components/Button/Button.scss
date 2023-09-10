@@ -1,0 +1,16 @@
+@import "../../styles/helpers/mixins";
+
+.button {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  border: rem(1px) solid $black;
+  border-radius: rem(50px);
+  padding: rem(10px) rem(33px);
+  @include montserrat(14px, 400, 17px, 14px, 17px, #020202);
+}
+
+.button.black {
+  background-color: $black;
+  color: $white;
+}

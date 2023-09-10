@@ -1,0 +1,44 @@
+@import "../../styles/helpers/mixins";
+
+.catalog-page {
+  @include container;
+  margin-top: 32px;
+  padding-bottom: rem(51px);
+}
+
+.catalog-sort {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  @include montserrat(16px, 400, 20px, 16px, 20px, $black);
+  border-radius: rem(20px);
+  border: 1px solid #c4c4c4;
+  padding: rem(10px) rem(14px);
+  padding-right: rem(25px);
+  width: rem(288px);
+  appearance: none;
+  overflow: hidden;
+  background: url("../../assets/icons/select-caret.svg") no-repeat;
+  background-position: rem(246px) center;
+  background-size: rem(20px) rem(10px);
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  margin-bottom: rem(35px);
+  @include size {
+    margin-left: 0;
+  }
+}
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: repeat(3, rem(379px));
+  grid-column-gap: rem(35px);
+  grid-row-gap: rem(51px);
+  grid-template-rows: auto;
+  margin-bottom: rem(50px) !important;
+  @include size {
+    grid-template-columns: repeat(1, rem(100%));
+  }
+}

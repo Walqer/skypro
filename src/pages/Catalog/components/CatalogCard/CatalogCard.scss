@@ -1,0 +1,67 @@
+@import "../../../../styles/helpers/_mixins.scss";
+
+.catalog__card {
+  &:hover &-buttons,
+  &:hover .overlay {
+    opacity: 1;
+  }
+  .img-wrapper {
+    position: relative;
+  }
+  .overlay {
+    opacity: 0;
+    transition: all 0.3s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    @include size {
+      opacity: 1;
+    }
+  }
+  position: relative;
+  img {
+    width: rem(378px);
+    height: rem(250px);
+    margin-bottom: rem(10px);
+  }
+  &-title {
+    display: inline-block;
+    @include montserrat(24px, 500, 29px, 24px, 29px, $black);
+    margin-bottom: rem(8px);
+  }
+  &-description {
+    display: inline-block;
+    @include montserrat(14px, 400, 17px, 14px, 17px, $black);
+    margin-bottom: rem(12px);
+    color: $light-gray;
+  }
+  &-price {
+    display: inline-block;
+    @include montserrat(24px, 500, 29px, 24px, 29px, $black);
+  }
+  &-buttons {
+    transition: all 0.2s;
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    @include size {
+      opacity: 1;
+    }
+  }
+  &-button {
+    background: transparent;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin-left: rem(21px);
+    cursor: pointer;
+    img {
+      width: rem(24px);
+      height: rem(24px);
+    }
+  }
+}

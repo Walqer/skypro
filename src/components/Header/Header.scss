@@ -1,0 +1,29 @@
+@import "../../styles/helpers/mixins";
+
+.header {
+  padding: 16px 0;
+  @include container;
+  background-color: $gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    text-decoration: none;
+    @include montserrat(36px, 600, 44px, 18px, 22px, $white);
+  }
+  &__menu-list {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+  }
+  &__menu-link {
+    text-decoration: none;
+    @include montserrat(16px, 400, 20px, 0, 0, $white);
+    display: inline-block;
+    margin-left: rem(32px);
+  }
+  @include size {
+    padding: rem(49.5px) rem(16px) rem(17.5px) rem(16px);
+  }
+}
