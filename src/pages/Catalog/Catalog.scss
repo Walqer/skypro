@@ -27,7 +27,8 @@
   }
   margin-bottom: rem(35px);
   @include size {
-    margin-left: 0;
+    margin: 0 auto;
+    margin-bottom: rem(35px);
   }
 }
 
@@ -38,7 +39,11 @@
   grid-row-gap: rem(51px);
   grid-template-rows: auto;
   margin-bottom: rem(50px) !important;
+  @include sizeTablet {
+    grid-template-columns: repeat(2, rem(379px));
+  }
   @include size {
-    grid-template-columns: repeat(1, rem(100%));
+    justify-content: center;
+    grid-template-columns: repeat(1, rem(320px));
   }
 }

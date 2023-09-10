@@ -24,6 +24,7 @@ export const CartSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       existingItem ? existingItem.count++ : state.cart.push(action.payload);
+      alert("Добавлено в корзину");
     },
     remove(state, action: PayloadAction<number>) {
       state.cart = state.cart.filter((item) => item.id !== action.payload);

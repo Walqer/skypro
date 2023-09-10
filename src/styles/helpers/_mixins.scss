@@ -22,6 +22,9 @@
   @include size {
     padding: 0 rem(16px);
   }
+  @include sizeTablet {
+    max-width: rem(786px);
+  }
 }
 
 @mixin montserrat(
@@ -41,6 +44,10 @@
   @include size {
     font-size: rem($mobSize);
     line-height: rem($mobHeight);
+  }
+  @include sizeTablet {
+    font-size: rem($fontSize);
+    line-height: rem($lineHeight);
   }
 }
 

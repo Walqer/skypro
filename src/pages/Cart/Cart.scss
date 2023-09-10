@@ -1,6 +1,7 @@
 @import "../../styles/helpers/mixins";
 
 .cart-page {
+  overflow: hidden;
   @include size {
     margin-top: rem(18px);
   }
@@ -8,10 +9,12 @@
     flex-direction: column;
   }
   &.empty {
+    h1 {
+      @include montserrat(26px, 600, 120%, 13px, 25px, $black);
+    }
     justify-content: center;
     display: flex;
     text-align: center;
-    @include montserrat(26px, 600, 120%, 13px, 25px, $black);
   }
   display: flex;
   justify-content: space-between;
@@ -64,7 +67,6 @@
   .btn-wrap {
     display: flex;
     @include size {
-      justify-content: space-between;
     }
   }
   &__form {
