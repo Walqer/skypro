@@ -4,11 +4,10 @@
 @import "./helpers/fonts";
 
 $rem-baseline: 16px;
-
 html,
 body {
-  @include rem-baseline(1.1vw);
-  @include size {
+  @include rem-baseline(1vw);
+  @include sizeTablet {
     @include rem-baseline;
   }
   scroll-behavior: smooth;
