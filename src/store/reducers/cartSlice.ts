@@ -8,9 +8,11 @@ export interface ICartItem extends IProduct {
 interface CartState {
   cart: ICartItem[];
 }
+const savedCartJSON = localStorage.getItem("cart");
+const savedCart: ICartItem[] = savedCartJSON ? JSON.parse(savedCartJSON) : [];
 
 export const initialState: CartState = {
-  cart: [],
+  cart: savedCart,
 };
 
 export const CartSlice = createSlice({
@@ -53,6 +55,7 @@ export default CartSlice.reducer;
 const cartItems = (state: RootState) => state.cartReducer.cart;
 
 export const total = createSelector([cartItems], (cartItems) => {
+  localStorage.setItem("cart", JSON.stringify(cartItems));
   if (cartItems.length) {
     return cartItems.reduce((acc, item) => {
       return (acc += item.price * item.count);
